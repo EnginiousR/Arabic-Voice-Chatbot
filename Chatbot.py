@@ -14,8 +14,8 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 
 class VoiceChatbot:
     def __init__(self):
-        self.cohere = cohere.Client("sa2zYFeXKM7vmv4hf8CNJehCdRvZQOwaOARbaBVe")  # Replace with your actual Cohere API key
-        self.elevenlabs = ElevenLabs(api_key="sk_75a650e382c7a4f4ca2394750ede4a2a29464bbdc98b4fc2")  # Replace with your actual ElevenLabs API key
+        self.cohere = cohere.Client("")  # Replace with your actual Cohere API key
+        self.elevenlabs = ElevenLabs(api_key="")  # Replace with your actual ElevenLabs API key
 
     def speak(self, text):
         try:
@@ -172,4 +172,5 @@ def chat():
 if __name__ == "__main__":
     # start recorder in background thread
     socketio.start_background_task(recorder_loop)
+
     socketio.run(app, debug=True, host='0.0.0.0', port=5000)
